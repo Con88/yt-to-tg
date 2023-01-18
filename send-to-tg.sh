@@ -5,7 +5,7 @@ while read line
 do
     array[ $i ]="$line"        
     (( i++ ))
-done < <(ls yt-to-tg/Videos)
+done < <(ls -t yt-to-tg/Videos)
 
 size=${#array[*]}
 echo $size
