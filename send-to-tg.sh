@@ -1,4 +1,8 @@
 #! /bin/bash
+#custom parameters
+token=5717749765:AAF1vW5BOAIzZQWvRt3MbZieKaj7Z4V0Axo
+chat_id=limmybald
+
 
 i=0
 while read line
@@ -11,6 +15,5 @@ size=${#array[*]}
 echo $size
 for (( x=0; x<=$size; x++))
 do
-	echo ${array[x]}
-	curl -F video=@"./yt-to-tg/Videos/${array[x]}" -F caption="${array[x]::-4}" https://api.telegram.org/bot5717749765:AAF1vW5BOAIzZQWvRt3MbZieKaj7Z4V0Axo/sendVideo?chat_id=@limmybald
+	curl -F video=@"./yt-to-tg/Videos/${array[x]}" -F caption="${array[x]::-4}" https://api.telegram.org/bot$token/sendVideo?chat_id=@$chat_id
 done
